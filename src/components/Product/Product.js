@@ -6,7 +6,7 @@ const Product = ({ product }) => {
 
     return (
         <Link to={`/product/${product?.id}`} key={product.id}>
-            <div className='product-item bg-white'>
+            <div className='product-item product-item--xyz bg-white'>
                 <div className='category'>
                     {product?.category}</div>
                 <div className='product-item-img'>

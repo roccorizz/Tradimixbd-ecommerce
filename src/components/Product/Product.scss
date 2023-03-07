@@ -6,6 +6,8 @@
     box-shadow: rgba(50, 50, 93, 0.05) 0px 2px 5px -1px, rgba(0, 0, 0, 0.05) 0px 1px 3px -1px;
     transition: $transition-ease;
 
+
+
     .category {
         position: absolute;
         left: -5px;
@@ -38,6 +40,7 @@
         overflow: hidden !important;
         border-top-left-radius: 8px;
         border-top-right-radius: 8px;
+        transition: transform .5s ease;
     }
 
     &-info {
@@ -98,5 +101,8 @@
 
     &:hover {
         box-shadow: rgba(50, 50, 93, 0.1) 0px 2px 5px -1px, rgba(0, 0, 0, 0.1) 0px 1px 20px -1px;
+        transform: scale(1.1);
+        transition: 0.5s ease-in-out;
+
     }
 }
