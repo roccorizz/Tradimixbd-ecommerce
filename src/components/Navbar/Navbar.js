@@ -13,7 +13,7 @@ import CartModal from '../CartModal/CartModal';
 const Navbar = () => {
     const dispatch = useDispatch();
     const categories = useSelector(getAllCategories);
-    const carts = useSelector(getAllCategories);
+    const carts = useSelector(getAllCarts);
     const itemsCount = useSelector(getCartItemsCount);
     const [searchTerm, setSearchTerm] = useState("");
 

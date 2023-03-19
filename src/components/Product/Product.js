@@ -4,6 +4,8 @@ import { formatPrice } from "../../utils/helpers"
 import "./Product.scss"
 const Product = ({ product }) => {
 
+
+
     return (
         <Link to={`/product/${product?.id}`} key={product.id}>
             <div className='product-item product-item--xyz bg-white'>
@@ -28,7 +30,7 @@ const Product = ({ product }) => {
                             {formatPrice(product?.discountedPrice)}
                         </span>
                         <span className='discount fw-6'>
-                            ({product?.discountedPercentage}% Off)
+                            ({product?.discountPercentage}% Off)
                         </span>
                     </div>
                 </div>

@@ -134,7 +134,7 @@ const ProductSinglePage = () => {
                                             {formatPrice(discountedPrice)}
                                         </div>
                                         <div className='discount bg-purple fs-13 text-white fw-6 font-poppins'>
-                                            {product?.discountPercentage}% OFF
+                                            {product?.discountPercentage} % OFF
                                         </div>
                                     </div>
                                 </div>
