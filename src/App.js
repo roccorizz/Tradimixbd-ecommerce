@@ -7,6 +7,7 @@ import Navbar from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
 import { Provider } from 'react-redux';
 import store from './store/store';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -16,8 +17,18 @@ function App() {
           <Header />
           <Sidebar />
           <Routes>
+            {/*home page route*/}
             <Route path="/" element={<Home />} />
+            {/*single product route*/}
+            <Route path="/product/:id" element={<ProductSingle />} />
+            {/*category wise product listing route*/}
+            <Route path="/category/:category" element={<CategoryProduct />} />
+            {/* cart */}
+            <Route path='/cart' element={<Cart />} />
+            {/* searched products */}
+            <Route path='/search/:searchTerm' element={<Search />} />
           </Routes>
+          <Footer />
         </BrowserRouter>
       </Provider>
     </div>

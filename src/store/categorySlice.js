@@ -3,6 +3,7 @@ import { BASE_URL } from './../utils/apiURL';
 import { STATUS } from "../utils/status";
 
 
+
 const initialState = {
     categories: [],
     categoriesStatus: STATUS.IDLE,
@@ -38,6 +39,12 @@ export const fetchAsyncCategories = createAsyncThunk('categories/fetch', async (
     const data = await response.json();
     return data;
 });
+
+export const fetchAsyncProductsOfCategory = createAsyncThunk('category-products/fetch', async (category) => {
+    const response = await fetch(`${BASE_URL}products/category/${category}`);
+    const data = await response.json();
+    return data.products;
+})
 
 export const getAllCategories = (state) => state.category.categories;
 export default categorySlice.reducer;
