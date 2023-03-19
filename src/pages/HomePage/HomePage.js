@@ -6,6 +6,7 @@ import Loader from '../../components/Loader/Loader';
 import { STATUS } from '../../utils/status';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductList from '../../components/ProductList/ProductList';
+import "./HomePage.scss"
 const HomePage = () => {
     const dispatch = useDispatch();
     const categories = useSelector(getAllCategories);

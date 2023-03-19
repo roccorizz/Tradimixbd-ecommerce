@@ -17,7 +17,7 @@ const initialState = {
     carts: fetchFromLocalStorage(),
     itemsCount: 0,
     totalAmount: 0,
-    isCartMessage: false
+    isCartMessageOn: false
 }
 
 const cartSlice = createSlice({
@@ -60,7 +60,6 @@ const cartSlice = createSlice({
         },
 
         getCartTotal: (state) => {
-            state.carts = [];
             state.totalAmount = state.carts.reduce((cartTotal, cartItem) => {
                 return cartTotal += cartItem.totalPrice
             }, 0)

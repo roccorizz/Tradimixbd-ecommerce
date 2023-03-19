@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './CartPage.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { shopping_cart } from '../../utils/images';
@@ -13,10 +13,15 @@ const CartPage = () => {
     const carts = useSelector(getAllCarts);
     const { itemsCount, totalAmount } = useSelector((state) => state.cart);
     console.log(itemsCount, totalAmount);
+
+    useEffect(() => {
+        dispatch(getCartTotal());
+    }, [carts, dispatch]);
+
     if (carts.length === 0) {
         return (
             <div className='container my-5'>
-                <div className='empty-cart flex justify-center align-center flex-column font-mantope'>
+                <div className='empty-cart flex justify-center align-center flex-column font-manrope'>
                     <img src={shopping_cart} alt="" />
                     <span className='fw-6 fs-15 text-gray'>Your shopping cart is empty.</span>
                     <Link to="/" className='shopping-btn bg-purple text-white fw-5'>Go shopping now</Link>
@@ -77,7 +82,7 @@ const CartPage = () => {
                                                     {cart?.quantity}
                                                 </div>
 
-                                                <button type='button' className='qty-decrease flex align-center justify-center' onClick={() => dispatch(toggleCartQty({ id: cart?.id, type: "DEC" }))}>
+                                                <button type='button' className='qty-decrease flex align-center justify-center' onClick={() => dispatch(toggleCartQty({ id: cart?.id, type: "INC" }))}>
                                                     <i className='fas fa-plus'></i>
                                                 </button>
                                             </div>
