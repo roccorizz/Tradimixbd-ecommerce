@@ -27,7 +27,9 @@ function CartModal({ carts }) {
                             })
                         }
                     </div>
-                    <div className='text-capitalize view-cart-btn bg-purple fs-15 font-manrope text-center'>view my shopping cart</div>
+                    <Link to='/cart' className='text-capitalize view-cart-btn bg-purple fs-15 font-manrope text-center'>
+                        view my shopping cart
+                    </Link>
                 </div>) : (
                     <div className='flex flex-column align-center justify-center cart-modal-empty'>
                         <img src={shopping_cart} alt="" />
