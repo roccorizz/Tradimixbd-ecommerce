@@ -8,6 +8,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 import { Provider } from 'react-redux';
 import store from './store/store';
 import Footer from './components/Footer/Footer';
+import ChatWidget from './components/ChatWidget/ChatWidget';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <BrowserRouter>
           <Header />
           <Sidebar />
+          <ChatWidget />
           <Routes>
             {/*home page route*/}
             <Route path="/" element={<Home />} />
