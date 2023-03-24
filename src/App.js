@@ -10,6 +10,7 @@ import store from './store/store';
 import Footer from './components/Footer/Footer';
 import ChatWidget from './components/ChatWidget/ChatWidget';
 
+
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             {/*home page route*/}
             <Route path="/" element={<Home />} />
+
             {/*single product route*/}
             <Route path="/product/:id" element={<ProductSingle />} />
             {/*category wise product listing route*/}

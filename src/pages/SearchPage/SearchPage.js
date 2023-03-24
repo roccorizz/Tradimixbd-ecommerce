@@ -6,15 +6,17 @@ import ProductList from '../../components/ProductList/ProductList';
 import { fetchAsyncSearchProduct, getSearchProducts, getSearchProductsStatus, clearSearch } from '../../store/searchSlice';
 import { STATUS } from '../../utils/status';
 import "./SearchPage.scss";
+
 const SearchPage = () => {
     const dispatch = useDispatch();
     const { searchTerm } = useParams();
     const searchProducts = useSelector(getSearchProducts);
     const searchProductsStatus = useSelector(getSearchProductsStatus);
+
     useEffect(() => {
         dispatch(clearSearch());
         dispatch(fetchAsyncSearchProduct(searchTerm));
-    }, [searchTerm]);
+    }, [dispatch, searchTerm]);
 
     if (!searchProducts || searchProducts.length === 0) {
         return (
